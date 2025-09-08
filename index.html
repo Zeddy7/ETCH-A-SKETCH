@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ETCH-A-SKETCH</title>
+    <link rel='stylesheet' href="./styles.css">
+</head>
+<body>
+    <h1>Etch-A-Sketch</h1>
+    <div id="container">
+        <div id="button-container">
+                <button class="change-size" onclick="start()">Grid Size</button>
+                <button class="colorfulButton" onclick="changeColor('colorful')">Rainbow</button>
+                <button class="blackButton" onclick="changeColor('black')">Black</button>
+                <button class="grayButton" onclick="changeColor('white')">White</button>
+                <button class="randomButton" onclick="changeColor(`hsl(${Math.random() * 360}, 100%, 50%)`)">Random</button>
+                <button class="erasorButton" onclick="changeColor('rgb(139, 139, 139)')">Erasor</button>
+                <button class="clearButton" onclick="reset()">Clear</button>
+        </div>
+        <div id="grid-container"></div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
