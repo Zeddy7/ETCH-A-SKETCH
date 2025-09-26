@@ -74,7 +74,3 @@ header + div {
    display: grid;
    grid-template-columns: repeat(auto-fill, minmax(20px, 50px));
 }
-
-.grid-container > div {
-   border: 1px solid black;
-}
