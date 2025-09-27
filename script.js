@@ -20,8 +20,11 @@ function createGrid(size) {
    gridContainer.innerHTML = "";
    gridContainer.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
    gridContainer.style.gridTemplateRows = `repeat(${size}, 1fr)`;
+
    for (let i = 0; i < size * size; i++) {
       const gridSquare = document.createElement("div");
+      gridSquare.classList.add("grid-square")
+      
       gridSquare.addEventListener("mouseenter", () => {
          if (color === "rainbow") {
             gridSquare.style.backgroundColor = getRandomColor();
@@ -39,8 +42,6 @@ function changeColor(newColor) {
    color = newColor;
 }
 
-const gridDiv = document.querySelectorAll(".grid-square");
-
 const rainbow = document.querySelector(".rainbow");
 const random = document.querySelector(".random");
 const white = document.querySelector(".white");
@@ -57,7 +58,7 @@ eraser.addEventListener("click", () => changeColor("red"));
 userChoice.addEventListener("input", () => changeColor(userChoice.value));
 
 clear.addEventListener("click", () => {
-   gridDiv.forEach(square => {
+   document.querySelectorAll(".grid-square").forEach(square => {
       square.style.backgroundColor = "red";
    });
 });
